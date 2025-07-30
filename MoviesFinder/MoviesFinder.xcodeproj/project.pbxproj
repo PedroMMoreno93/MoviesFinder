@@ -10,6 +10,7 @@
 		22461B022E3A756100FBA0AE /* Theme in Frameworks */ = {isa = PBXBuildFile; productRef = 22461B012E3A756100FBA0AE /* Theme */; };
 		22461B412E3A838B00FBA0AE /* UIComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 22461B402E3A838B00FBA0AE /* UIComponents */; };
 		22461B6C2E3A851900FBA0AE /* Utils in Frameworks */ = {isa = PBXBuildFile; productRef = 22461B6B2E3A851900FBA0AE /* Utils */; };
+		22461BA72E3A85E400FBA0AE /* MVVM_Core in Frameworks */ = {isa = PBXBuildFile; productRef = 22461BA62E3A85E400FBA0AE /* MVVM_Core */; };
 		22E378B82E3A638B002FA7E4 /* TestPlan.xctestplan in Resources */ = {isa = PBXBuildFile; fileRef = 22E378B72E3A638B002FA7E4 /* TestPlan.xctestplan */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +34,7 @@
 		22E379462E3A7127002FA7E4 /* Exceptions for "MoviesFinder" folder in "MoviesFinder" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
+				Sources/Packages/MVVM_Core,
 				Sources/Packages/Theme,
 				Sources/Packages/UIComponents,
 				Sources/Packages/Utils,
@@ -65,6 +67,7 @@
 				22461B6C2E3A851900FBA0AE /* Utils in Frameworks */,
 				22461B412E3A838B00FBA0AE /* UIComponents in Frameworks */,
 				22461B022E3A756100FBA0AE /* Theme in Frameworks */,
+				22461BA72E3A85E400FBA0AE /* MVVM_Core in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -129,6 +132,7 @@
 				22461B012E3A756100FBA0AE /* Theme */,
 				22461B402E3A838B00FBA0AE /* UIComponents */,
 				22461B6B2E3A851900FBA0AE /* Utils */,
+				22461BA62E3A85E400FBA0AE /* MVVM_Core */,
 			);
 			productName = MoviesFinder;
 			productReference = 22E3788C2E3A627B002FA7E4 /* MoviesFinder.app */;
@@ -532,6 +536,10 @@
 		22461B6B2E3A851900FBA0AE /* Utils */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Utils;
+		};
+		22461BA62E3A85E400FBA0AE /* MVVM_Core */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = MVVM_Core;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
