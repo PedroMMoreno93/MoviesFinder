@@ -14,6 +14,27 @@
   "testTargets" : [
     {
       "target" : {
+        "containerPath" : "container:MoviesFinder.xcodeproj",
+        "identifier" : "22E378992E3A627D002FA7E4",
+        "name" : "MoviesFinderTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:MoviesFinder\/Sources\/Packages\/Utils",
+        "identifier" : "UtilsTests",
+        "name" : "UtilsTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:MoviesFinder\/Sources\/Packages\/MVVM_Core",
+        "identifier" : "MVVM_CoreTests",
+        "name" : "MVVM_CoreTests"
+      }
+    },
+    {
+      "target" : {
         "containerPath" : "container:MoviesFinder\/Sources\/Packages\/Theme",
         "identifier" : "ThemeTests",
         "name" : "ThemeTests"
@@ -21,9 +42,9 @@
     },
     {
       "target" : {
-        "containerPath" : "container:MoviesFinder.xcodeproj",
-        "identifier" : "22E378992E3A627D002FA7E4",
-        "name" : "MoviesFinderTests"
+        "containerPath" : "container:MoviesFinder\/Sources\/Packages\/UIComponents",
+        "identifier" : "UIComponentsTests",
+        "name" : "UIComponentsTests"
       }
     }
   ],
