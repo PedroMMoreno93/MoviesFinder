@@ -77,16 +77,16 @@ public enum ThemeLayout {
     
     public enum Frame {
         /// Status bar icon frame
-        static let iconStatus = CGSize(width: 20,  height: 20)
+        static let iconStatus = CGSize(width: 20, height: 20)
         
         /// Minimum tappable area for buttons
-        static let buttonMin = CGSize(width: 44,  height: 44)
+        static let buttonMin = CGSize(width: 44, height: 44)
         
         /// Compact thumbnail in dense lists
-        static let thumbnailSmall = CGSize(width: 60,  height: 90)
+        static let thumbnailSmall = CGSize(width: 60, height: 90)
         
         /// Standard thumbnail size in lists or grids
-        static let thumbnailMed = CGSize(width: 80,  height: 120)
+        static let thumbnailMed = CGSize(width: 80, height: 120)
         
         /// Featured or highlighted thumbnail
         static let thumbnailLarge = CGSize(width: 120, height: 180)
