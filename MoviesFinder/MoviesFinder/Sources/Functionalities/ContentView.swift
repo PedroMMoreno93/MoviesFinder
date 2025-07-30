@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Theme
 
 struct ContentView: View {
     var body: some View {
@@ -14,8 +15,20 @@ struct ContentView: View {
                 .imageScale(.large)
                 .foregroundStyle(.tint)
             Text("Hello, world!")
+                .foregroundStyle(ThemeColors.secondaryText)
+            
+            Button {
+                
+            } label: {
+                Text("Button")
+            }
+            .buttonStyle(.borderedProminent)
+            .foregroundStyle(ThemeColors.secondaryAccent)
         }
         .padding()
+        .background {
+            ThemeColors.surface
+        }
     }
 }
 

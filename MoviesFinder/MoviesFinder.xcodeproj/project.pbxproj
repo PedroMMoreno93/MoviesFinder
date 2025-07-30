@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		22461B022E3A756100FBA0AE /* Theme in Frameworks */ = {isa = PBXBuildFile; productRef = 22461B012E3A756100FBA0AE /* Theme */; };
 		22E378B82E3A638B002FA7E4 /* TestPlan.xctestplan in Resources */ = {isa = PBXBuildFile; fileRef = 22E378B72E3A638B002FA7E4 /* TestPlan.xctestplan */; };
 /* End PBXBuildFile section */
 
@@ -26,9 +27,22 @@
 		22E378B72E3A638B002FA7E4 /* TestPlan.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = TestPlan.xctestplan; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		22E379462E3A7127002FA7E4 /* Exceptions for "MoviesFinder" folder in "MoviesFinder" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Sources/Packages/Theme,
+			);
+			target = 22E3788B2E3A627B002FA7E4 /* MoviesFinder */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		22E3788E2E3A627B002FA7E4 /* MoviesFinder */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				22E379462E3A7127002FA7E4 /* Exceptions for "MoviesFinder" folder in "MoviesFinder" target */,
+			);
 			path = MoviesFinder;
 			sourceTree = "<group>";
 		};
@@ -44,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22461B022E3A756100FBA0AE /* Theme in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -57,12 +72,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		22461B002E3A756100FBA0AE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		22E378832E3A627B002FA7E4 = {
 			isa = PBXGroup;
 			children = (
 				22E378B72E3A638B002FA7E4 /* TestPlan.xctestplan */,
 				22E3788E2E3A627B002FA7E4 /* MoviesFinder */,
 				22E3789D2E3A627D002FA7E4 /* MoviesFinderTests */,
+				22461B002E3A756100FBA0AE /* Frameworks */,
 				22E3788D2E3A627B002FA7E4 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -97,6 +120,7 @@
 			);
 			name = MoviesFinder;
 			packageProductDependencies = (
+				22461B012E3A756100FBA0AE /* Theme */,
 			);
 			productName = MoviesFinder;
 			productReference = 22E3788C2E3A627B002FA7E4 /* MoviesFinder.app */;
@@ -487,6 +511,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		22461B012E3A756100FBA0AE /* Theme */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Theme;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 22E378842E3A627B002FA7E4 /* Project object */;
 }
