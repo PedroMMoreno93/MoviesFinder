@@ -14,6 +14,13 @@
   "testTargets" : [
     {
       "target" : {
+        "containerPath" : "container:MoviesFinder\/Sources\/Packages\/Theme",
+        "identifier" : "ThemeTests",
+        "name" : "ThemeTests"
+      }
+    },
+    {
+      "target" : {
         "containerPath" : "container:MoviesFinder.xcodeproj",
         "identifier" : "22E378992E3A627D002FA7E4",
         "name" : "MoviesFinderTests"
