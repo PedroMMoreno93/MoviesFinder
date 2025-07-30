@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		22461B022E3A756100FBA0AE /* Theme in Frameworks */ = {isa = PBXBuildFile; productRef = 22461B012E3A756100FBA0AE /* Theme */; };
+		22461B412E3A838B00FBA0AE /* UIComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 22461B402E3A838B00FBA0AE /* UIComponents */; };
 		22E378B82E3A638B002FA7E4 /* TestPlan.xctestplan in Resources */ = {isa = PBXBuildFile; fileRef = 22E378B72E3A638B002FA7E4 /* TestPlan.xctestplan */; };
 /* End PBXBuildFile section */
 
@@ -32,6 +33,7 @@
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Sources/Packages/Theme,
+				Sources/Packages/UIComponents,
 			);
 			target = 22E3788B2E3A627B002FA7E4 /* MoviesFinder */;
 		};
@@ -58,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22461B412E3A838B00FBA0AE /* UIComponents in Frameworks */,
 				22461B022E3A756100FBA0AE /* Theme in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -121,6 +124,7 @@
 			name = MoviesFinder;
 			packageProductDependencies = (
 				22461B012E3A756100FBA0AE /* Theme */,
+				22461B402E3A838B00FBA0AE /* UIComponents */,
 			);
 			productName = MoviesFinder;
 			productReference = 22E3788C2E3A627B002FA7E4 /* MoviesFinder.app */;
@@ -516,6 +520,10 @@
 		22461B012E3A756100FBA0AE /* Theme */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Theme;
+		};
+		22461B402E3A838B00FBA0AE /* UIComponents */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = UIComponents;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
