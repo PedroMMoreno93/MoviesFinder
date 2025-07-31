@@ -93,14 +93,26 @@ public enum ThemeLayout {
         
         /// Featured or highlighted thumbnail. Value of 120 x 180.
         public static let thumbnailL = CGSize(width: 120, height: 180)
-        
-        /// Large icons. Value of 42 pt.
-        public static let iconHeightL: CGFloat = 42
+                
+        /// Medium icons. Value of 42 pt.
+        public static let iconHeightM: CGFloat = 42
 
-        /// Fixed height for grid items. Value of 100 pt.
+        /// Medium icons. Value of 48 pt.
+        public static let iconHeightL: CGFloat = 48
+
+        /// Larger icons. Value of 64 pt.
+        public static let iconHeightXL: CGFloat = 64
+        
+        /// Extra large icons. Value of 100 pt.
+        public static let iconHeightXXL: CGFloat = 100
+
+                /// Fixed height for grid items. Value of 100 pt.
         public static let listRowHeight: CGFloat = 100
         
-        /// Fixed height for list rows. Value of 160 pt.
+        /// Fixed height for small list rows. Value of 40 pt.
+        public static let gridItemHeightS: CGFloat = 40
+        
+        /// Fixed height for list rows. Value of 180 pt.
         public static let gridItemHeight: CGFloat = 180
         
         /// Main poster image in detail view. Value of 200 x 300.
@@ -109,10 +121,14 @@ public enum ThemeLayout {
         /// Section banner or header image. Value of 180 pt.
         public static let backdropHeight: CGFloat = 180
         
-        /// Grid of movies. Value of 200 x 300.
-        public static let cardSize = CGSize(width: 180, height: 200)
+        /// Defaul card size. Value of 180 x 20.
+        public static let cardSize = CGSize(width: 180, height: 280)
         
-        /// Grid of movies. Value of 200 x 300.
+        /// Picker style size. Value of 200 x 40.
         public static let pickerSize = CGSize(width: 200, height: 40)
+        
+        /// Small badges. Value of 24 pt.
+        public static let badgeHeight: CGFloat = 24
+
     }
 }

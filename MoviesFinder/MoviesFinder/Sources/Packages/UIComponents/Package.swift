@@ -16,11 +16,32 @@ let package = Package(
             name: "UIComponents",
             targets: ["UIComponents"])
     ],
+    dependencies: [
+        .package(
+            name: "Theme",
+            path: "../Theme"
+        ),
+        .package(
+            name: "Utils",
+            path: "../Utils"
+        )
+    ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
         // Targets can depend on other targets in this package and products from dependencies.
         .target(
-            name: "UIComponents"),
+            name: "UIComponents",
+            dependencies: [
+                .product(
+                    name: "Theme",
+                    package: "Theme"
+                ),
+                .product(
+                    name: "UIUtils",
+                    package: "Utils"
+                )
+            ]
+        ),
         .testTarget(
             name: "UIComponentsTests",
             dependencies: ["UIComponents"]
