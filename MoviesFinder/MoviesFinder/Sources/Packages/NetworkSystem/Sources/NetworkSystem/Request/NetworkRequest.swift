@@ -91,13 +91,30 @@ public struct NetworkRequest: NetworkRequestProtocol {
         if !self.dto.showLog {
             return ""
         }
+        
+        var queryParamsString: String = ""
+      
+        if let queryParams = queryParams {
+            queryParams.forEach { param in
+                if param.stringRepresentation == queryParams.first?.stringRepresentation {
+                    queryParamsString += param.stringRepresentation
+                } else {
+                    queryParamsString += "&"
+                    queryParamsString += param.stringRepresentation
+                }
+            }
+        } else {
+            queryParamsString = ""
+        }
+
         return
 """
 domain: \(self.domain)
 endpoint: \(self.endpoint)
 method: \(self.method.rawValue)
 header: \(self.header ?? [:])
-body: \(self.body?.jsonString() ?? "No hay body")
+body: \(self.body?.jsonString() ?? "")
+queryParams: \(queryParamsString)
 """
     }
     

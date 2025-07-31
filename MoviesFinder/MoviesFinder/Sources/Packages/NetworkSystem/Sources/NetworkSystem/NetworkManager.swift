@@ -9,7 +9,7 @@ import CryptoKit
 import Foundation
 import Utils
 
-final class NetworkManager {
+public final class NetworkManager {
     
     var urlProtocol: URLProtocol.Type?
     private var request: NetworkRequestProtocol?
@@ -22,7 +22,6 @@ final class NetworkManager {
             configuration.protocolClasses = [urlProtocol]
             return URLSession(configuration: configuration)
         } else {
-            
             let configuration = URLSessionConfiguration.default
             configuration.timeoutIntervalForRequest = timeout
             configuration.urlCache = URLCache.shared

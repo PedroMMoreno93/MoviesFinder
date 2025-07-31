@@ -14,6 +14,7 @@ public enum RequestHeaders {
         public static let acceptEncoding: String = "Accept-Encoding"
         public static let connection: String = "Connection"
         public static let cacheControl: String = "Cache-Control"
+        public static let authorization: String = "Authorization"
     }
 
     public enum Value {
@@ -22,6 +23,11 @@ public enum RequestHeaders {
         public static let encodings: String = "gzip, deflate, br"
         public static let keepAlive: String = "keep-alive"
         public static let noCache: String = "no-cache"
+        public static let bearer: String = "Bearer"
+        public static func bearer(_ token: String) -> String {
+            return RequestHeaders.Value.bearer
+            + " " + token
+        }
     }
 
     public static let standard: [String: String]? = [
