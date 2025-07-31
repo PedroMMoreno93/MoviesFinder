@@ -14,6 +14,9 @@ public enum ThemeColors {
     /// Panels, cards and dropdown/menu backgrounds
     public static let surface = Color("Surface", bundle: .module)
     
+    /// Elements shadows
+    public static let shadow = Color("Shadow", bundle: .module)
+    
     /// Main body text, headlines
     public static let primaryText = Color("Primary Text", bundle: .module)
     
