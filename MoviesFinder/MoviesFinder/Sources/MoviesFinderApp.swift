@@ -7,37 +7,16 @@
 
 import SwiftUI
 import NetworkSystem
+import UIUtils
 
 @main
 struct MoviesFinderApp: App {
     var body: some Scene {
         WindowGroup {
-            MovieListView(
-                viewModel: MovieListViewModel(
-                    moviesUseCase: GetMoviesList(
-                        repository: MoviesRepository(
-                            apiDataSourceMovies: ApiDataSourceMovies(
-                                networkClient: NetworkManager()
-                            ),
-                            moviesDomainMapper: MoviesDomainMapper(),
-                            moviesSortCategoryDomainMapper: MoviesSortCategoryDomainMapper(),
-                            genresDomainMapper: GenresDomainMapper()
-                        )
-                    ),
-                    genresUseCase: GetGenresList(
-                        repository: GenresRepository(
-                            apiDataSourceGenres: ApiDataSourceGenres(
-                                networkClient: NetworkManager()
-                            ),
-                            genresDomainMapper: GenresDomainMapper()
-                        )
-                    )
-                )
+            HomeView(
+                moviesList: MovieListFactory.create()
             )
-            .frame(
-                maxWidth: NSScreen.main?.frame.width ?? 800,
-                maxHeight: NSScreen.main?.frame.height ?? 600
-            )
+            .maximizeView()
         }
     }
 }

@@ -130,5 +130,8 @@ public enum ThemeLayout {
         /// Small badges. Value of 24 pt.
         public static let badgeHeight: CGFloat = 24
 
+        /// Side bar layout. Value of 180 pt.
+        public static let sideBarWidth: CGFloat = 180
+
     }
 }
