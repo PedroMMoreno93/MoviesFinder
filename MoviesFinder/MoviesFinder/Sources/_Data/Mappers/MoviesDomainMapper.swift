@@ -14,7 +14,8 @@ open class MoviesDomainMapper {
         let mappedEntities = responseModel.results.compactMap { item in
             let backdropPathURL: String?
             
-            if let backdropPath = item.backdropPath {
+            if let backdropPath = item.backdropPath,
+               !backdropPath.isEmpty {
                 backdropPathURL = DataConstants.URLs.imagesBaseURL + backdropPath
             } else {
                 backdropPathURL = nil
@@ -22,7 +23,8 @@ open class MoviesDomainMapper {
             
             let posterPathURL: String?
 
-            if let posterPath = item.posterPath {
+            if let posterPath = item.posterPath,
+               !posterPath.isEmpty {
                 posterPathURL = DataConstants.URLs.imagesBaseURL + posterPath
             } else {
                 posterPathURL = nil
@@ -46,13 +48,5 @@ open class MoviesDomainMapper {
             )
         }
         return mappedEntities
-    }
-    
-    func mapGenresIds(
-        _ genres: [GenreEntity]
-    ) -> [String] {
-        return genres.compactMap { genre in
-            return "\(genre.id)"
-        }
     }
 }

@@ -11,17 +11,20 @@ public class MoviesRepository: GetMoviesListRepositoryProtocol {
     private let apiDataSourceMovies: ApiDataSourceMoviesProtocol
     private let moviesDomainMapper: MoviesDomainMapper
     private let moviesSortCategoryDomainMapper: MoviesSortCategoryDomainMapper
-    
+    private let genresDomainMapper: GenresDomainMapper
+
     public init(
         apiDataSourceMovies: ApiDataSourceMoviesProtocol,
         moviesDomainMapper: MoviesDomainMapper,
-        moviesSortCategoryDomainMapper: MoviesSortCategoryDomainMapper
+        moviesSortCategoryDomainMapper: MoviesSortCategoryDomainMapper,
+        genresDomainMapper: GenresDomainMapper
     ) {
         self.apiDataSourceMovies = apiDataSourceMovies
         self.moviesDomainMapper = moviesDomainMapper
         self.moviesSortCategoryDomainMapper = moviesSortCategoryDomainMapper
-    }
+        self.genresDomainMapper = genresDomainMapper
 
+    }
     
     public func getMovies(
         page: Int,
@@ -33,7 +36,7 @@ public class MoviesRepository: GetMoviesListRepositoryProtocol {
             sortBy: moviesSortCategoryDomainMapper.map(
                 entity: sortBy
             ),
-            genres: moviesDomainMapper.mapGenresIds(genres)
+            genres: genresDomainMapper.mapGenresIds(genres)
         )
         let entities = moviesDomainMapper.map(responseModel: response)
         return entities

@@ -20,7 +20,8 @@ struct MoviesFinderApp: App {
                                 networkClient: NetworkManager()
                             ),
                             moviesDomainMapper: MoviesDomainMapper(),
-                            moviesSortCategoryDomainMapper: MoviesSortCategoryDomainMapper()
+                            moviesSortCategoryDomainMapper: MoviesSortCategoryDomainMapper(),
+                            genresDomainMapper: GenresDomainMapper()
                         )
                     ),
                     genresUseCase: GetGenresList(

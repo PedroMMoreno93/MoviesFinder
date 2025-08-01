@@ -21,7 +21,7 @@ public class GetGenresList: GetGenresListUseCase {
     public func execute() async throws -> [GenreEntity] {
         do {
             let response = try await repository.getGenres()
-            return response
+            return response.sorted { $0.name < $1.name }
         } catch {
             throw error
         }

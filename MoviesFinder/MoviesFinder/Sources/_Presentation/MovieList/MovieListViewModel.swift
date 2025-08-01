@@ -98,7 +98,6 @@ public class MovieListViewModel: BaseViewModel {
                 return
             }
             self.modelView.page -= 1
-
         }
     }
     

@@ -19,4 +19,12 @@ open class GenresDomainMapper {
         }
         return mappedEntities
     }
+    
+    func mapGenresIds(
+        _ genres: [GenreEntity]
+    ) -> [String] {
+        return genres.compactMap { genre in
+            return "\(genre.id)"
+        }
+    }
 }
