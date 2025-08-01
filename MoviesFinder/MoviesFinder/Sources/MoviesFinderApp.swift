@@ -14,7 +14,16 @@ struct MoviesFinderApp: App {
     var body: some Scene {
         WindowGroup {
             HomeView(
-                moviesList: MovieListFactory.create()
+                moviesList: MovieListFactory.create(
+                    createDetail: {
+                        movieId,
+                        backButtonAction in
+                        MovieDetailFactory.create(
+                            movieId: movieId,
+                            backButtonAction: backButtonAction
+                        )
+                    }
+                )
             )
             .maximizeView()
         }

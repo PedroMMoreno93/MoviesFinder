@@ -8,8 +8,9 @@
 import Foundation
 import UIComponents
 
-public struct MovieListItemModelView: MoviewCardModelView {
+public struct MovieListItemModelView: MovieCardModelView {
     public let id = UUID()
+    public let movieId: Int
     public let title: String
     public let overview: String
     public let language: String
@@ -37,12 +38,14 @@ public struct MovieListItemModelView: MoviewCardModelView {
     }
     
     public init(
+        movieId: Int,
         title: String,
         overview: String,
         language: String,
         backdropPath: String?,
         genres: [GenreEntity]?
     ) {
+        self.movieId = movieId
         self.title = title
         self.overview = overview
         self.language = language
@@ -56,6 +59,7 @@ extension MovieListItemModelView {
         from entity: MoviesListItemEntity,
         genreEntities: [GenreEntity]
     ) {
+        self.movieId = entity.id
         self.title = entity.title
         self.overview = entity.overview
         self.language = entity.originalLanguage

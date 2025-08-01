@@ -18,7 +18,7 @@ Couldn't load movies. Please retry.
 If the problem persists, try rebooting the app.
 """
     let errorStateRetryButtonLabel: String = "Retry"
-    let loadingStateLabel: String = "Loading..."
+    let loadingStateLabel: String = "Loading Movies..."
     let genreDropDownTitle: String = "Genre"
     let sortDropDownTitle: String = "Sort"
     let loadMoreLabel: String = "Load More"
@@ -29,7 +29,7 @@ If the problem persists, try rebooting the app.
     var sortBy: MoviesSortCategoryEntity = .popularityDescending
     var genres: [GenreEntity] = []
     var selectedGenre: GenreEntity = .all
-    
+    var selectedMovieId: Int?
     // MARK: init
     public init(
         movies: [MovieListItemModelView] = []
