@@ -11,12 +11,11 @@ import UIUtils
 
 @main
 struct MoviesFinderApp: App {
+    @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+
     var body: some Scene {
         WindowGroup {
-            HomeView(
-                moviesList: MovieListFactory.create()
-            )
-            .maximizeView()
+          EmptyView()
         }
     }
 }
