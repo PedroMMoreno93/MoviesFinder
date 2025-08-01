@@ -6,21 +6,31 @@
 //
 
 import Foundation
+import SwiftUI
 
-enum SidebarItem: String, CaseIterable, Identifiable {
-    case movies = "Movies"
-    case settings = "Settings"
+enum SidebarItem: Int, CaseIterable, Identifiable {
+    case movies = 1
+    case settings = 2
     
-    var id: String { rawValue }
+    var id: Int { rawValue }
 }
 
 extension SidebarItem {
-    var navigationTitle: String {
+    var title: String {
         switch self {
         case .movies:
             "Movies"
         case .settings:
             "Settings"
+        }
+    }
+    
+    var icon: Image {
+        switch self {
+        case .movies:
+            Image(systemName: "movieclapper")
+        case .settings:
+            Image(systemName: "gear")
         }
     }
 }
