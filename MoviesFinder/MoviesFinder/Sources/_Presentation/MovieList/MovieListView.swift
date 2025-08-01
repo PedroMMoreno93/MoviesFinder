@@ -39,7 +39,6 @@ public struct MovieListView: BaseView {
         .task {
             await viewModel.onAppear()
         }
-        .preferredColorScheme(.light)
     }
     
     private var emptyStateView: some View {
