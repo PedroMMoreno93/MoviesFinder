@@ -8,6 +8,7 @@
 import XCTest
 @testable import MoviesFinder
 
+// swiftlint:disable type_body_length
 final class MovieListViewModelTests: XCTestCase {
 
     func test_fetch_genres_success_when_use_case_success() async throws {
@@ -81,6 +82,7 @@ final class MovieListViewModelTests: XCTestCase {
         XCTAssertEqual(capturedState, .failure)
     }
     
+    // swiftlint:disable function_body_length
     func test_fetch_movies_success_when_use_case_success() async throws {
         // GIVEN
         let mockMovies = [
@@ -157,6 +159,7 @@ final class MovieListViewModelTests: XCTestCase {
         XCTAssertFalse(capturedResult.isEmpty)
         XCTAssertEqual(capturedState, .success)
     }
+    // swiftlint:enable function_body_length
 
     func test_fetch_movies_fails_when_use_case_fails() async throws {
         // GIVEN
@@ -189,7 +192,7 @@ final class MovieListViewModelTests: XCTestCase {
         XCTAssertTrue(capturedShowErrorView)
     }
     
-    // 5. fetch more movies success
+    // swiftlint:disable function_body_length
     func test_fetch_more_movies_success_when_use_case_success() async throws {
         // GIVEN
         let mockMovies = [
@@ -266,6 +269,7 @@ final class MovieListViewModelTests: XCTestCase {
         XCTAssertFalse(capturedResult.isEmpty)
         XCTAssertEqual(capturedState, .success)
     }
+    // swiftlint:enable function_body_length
 
     func test_fetch_more_movies_fails_when_use_case_fails_and_resets_page() async throws {
         // GIVEN
@@ -386,3 +390,4 @@ final class MovieListViewModelTests: XCTestCase {
         XCTAssertEqual(capturedResult, expectedResult)
     }
 }
+// swiftlint:enable type_body_length

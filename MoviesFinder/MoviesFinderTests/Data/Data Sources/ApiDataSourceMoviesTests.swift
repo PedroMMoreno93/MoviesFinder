@@ -13,7 +13,6 @@ final class ApiDataSourceMoviesTests: XCTestCase {
     // swiftlint:disable function_body_length
     func test_fetchMovies_succeeds_when_networkclient_requests_succeeds_and_response_is_correct() async throws {
         // GIVEN
-        // swiftlint:disable line_length
         let jsonData = """
              {
                "page": 1,
@@ -30,7 +29,7 @@ final class ApiDataSourceMoviesTests: XCTestCase {
                    "id": 1311031,
                    "original_language": "ja",
                    "original_title": "劇場版「鬼滅の刃」無限城編 第一章 猗窩座再来",
-                   "overview": "As the Demon Slayer Corps members and Hashira engaged in a group strength training program, the Hashira Training, in preparation for the forthcoming battle against the demons, Muzan Kibutsuji appears at the Ubuyashiki Mansion. With the head of the Demon Corps in danger, Tanjiro and the Hashira rush to the headquarters but are plunged into a deep descent to a mysterious space by the hands of Muzan Kibutsuji.  The destination of where Tanjiro and Demon Slayer Corps have fallen is the demons' stronghold – the Infinity Castle. And so, the battleground is set as the final battle between the Demon Slayer Corps and the demons ignites.",
+                   "overview": "mock overview 1",
                    "popularity": 600.6803,
                    "poster_path": "/aFRDH3P7TX61FVGpaLhKr6QiOC1.jpg",
                    "release_date": "2025-07-18",
@@ -50,7 +49,7 @@ final class ApiDataSourceMoviesTests: XCTestCase {
                    "id": 1071585,
                    "original_language": "en",
                    "original_title": "M3GAN 2.0",
-                   "overview": "After the underlying tech for M3GAN is stolen and misused by a powerful defense contractor to create a military-grade weapon known as Amelia, M3GAN's creator Gemma realizes that the only option is to resurrect M3GAN and give her a few upgrades, making her faster, stronger, and more lethal.",
+                   "overview": "mock overview 2",
                    "popularity": 410.1184,
                    "poster_path": "/oekamLQrwlJjRNmfaBE4llIvkir.jpg",
                    "release_date": "2025-06-25",
@@ -64,10 +63,9 @@ final class ApiDataSourceMoviesTests: XCTestCase {
                "total_results": 53747
              }
             """
-        // swiftlint:enable line_length
 
         let data = Data(jsonData.utf8)
-        // swiftlint:disable line_length
+
         let expectedResult = MovieListResponseModel(
             page: 1,
             results: [
@@ -83,7 +81,7 @@ final class ApiDataSourceMoviesTests: XCTestCase {
                     id: 1311031,
                     originalLanguage: "ja",
                     originalTitle: "劇場版「鬼滅の刃」無限城編 第一章 猗窩座再来",
-                    overview: "As the Demon Slayer Corps members and Hashira engaged in a group strength training program, the Hashira Training, in preparation for the forthcoming battle against the demons, Muzan Kibutsuji appears at the Ubuyashiki Mansion. With the head of the Demon Corps in danger, Tanjiro and the Hashira rush to the headquarters but are plunged into a deep descent to a mysterious space by the hands of Muzan Kibutsuji.  The destination of where Tanjiro and Demon Slayer Corps have fallen is the demons' stronghold – the Infinity Castle. And so, the battleground is set as the final battle between the Demon Slayer Corps and the demons ignites.",
+                    overview: "mock overview 1",
                     popularity: 600.6803,
                     posterPath: "/aFRDH3P7TX61FVGpaLhKr6QiOC1.jpg",
                     releaseDate: "2025-07-18",
@@ -103,7 +101,7 @@ final class ApiDataSourceMoviesTests: XCTestCase {
                     id: 1071585,
                     originalLanguage: "en",
                     originalTitle: "M3GAN 2.0",
-                    overview: "After the underlying tech for M3GAN is stolen and misused by a powerful defense contractor to create a military-grade weapon known as Amelia, M3GAN's creator Gemma realizes that the only option is to resurrect M3GAN and give her a few upgrades, making her faster, stronger, and more lethal.",
+                    overview: "mock overview 2",
                     popularity: 410.1184,
                     posterPath: "/oekamLQrwlJjRNmfaBE4llIvkir.jpg",
                     releaseDate: "2025-06-25",
@@ -116,7 +114,6 @@ final class ApiDataSourceMoviesTests: XCTestCase {
             totalPages: 2688,
             totalResults: 53747
         )
-        // swiftlint:enable line_length
 
         let sut = ApiDataSourceMovies(
             networkClient: NetworkManagerStub(result: data)
@@ -155,9 +152,10 @@ final class ApiDataSourceMoviesTests: XCTestCase {
         XCTAssertNil(capturedResult)
     }
     
+    // swiftlint: disable function_body_length
     func test_fetchMovies_fails_when_networkclientt_requests_succeeds_and_response_is_not_correct() async throws {
+        
         // GIVEN
-        // swiftlint:disable line_length
         let jsonData = """
              {
                "page": 1,
@@ -174,7 +172,7 @@ final class ApiDataSourceMoviesTests: XCTestCase {
                    "id": "1311031",
                    "original_language": "ja",
                    "original_title": "劇場版「鬼滅の刃」無限城編 第一章 猗窩座再来",
-                   "overview": "As the Demon Slayer Corps members and Hashira engaged in a group strength training program, the Hashira Training, in preparation for the forthcoming battle against the demons, Muzan Kibutsuji appears at the Ubuyashiki Mansion. With the head of the Demon Corps in danger, Tanjiro and the Hashira rush to the headquarters but are plunged into a deep descent to a mysterious space by the hands of Muzan Kibutsuji.  The destination of where Tanjiro and Demon Slayer Corps have fallen is the demons' stronghold – the Infinity Castle. And so, the battleground is set as the final battle between the Demon Slayer Corps and the demons ignites.",
+                   "overview": "mock overview 1",
                    "popularity": 600.6803,
                    "poster_path": "/aFRDH3P7TX61FVGpaLhKr6QiOC1.jpg",
                    "release_date": "2025-07-18",
@@ -194,7 +192,7 @@ final class ApiDataSourceMoviesTests: XCTestCase {
                    "id": "1071585",
                    "original_language": "en",
                    "original_title": "M3GAN 2.0",
-                   "overview": "After the underlying tech for M3GAN is stolen and misused by a powerful defense contractor to create a military-grade weapon known as Amelia, M3GAN's creator Gemma realizes that the only option is to resurrect M3GAN and give her a few upgrades, making her faster, stronger, and more lethal.",
+                   "overview": "mock overview 2",
                    "popularity": 410.1184,
                    "poster_path": "/oekamLQrwlJjRNmfaBE4llIvkir.jpg",
                    "release_date": "2025-06-25",
@@ -208,7 +206,6 @@ final class ApiDataSourceMoviesTests: XCTestCase {
                "total_results": 53747
              }
             """
-        // swiftlint:enable line_length
         
         let data = Data(jsonData.utf8)
         let sut = ApiDataSourceMovies(
@@ -239,4 +236,5 @@ final class ApiDataSourceMoviesTests: XCTestCase {
             return
         }
     }
+    // swiftlint: enable function_body_length
 }

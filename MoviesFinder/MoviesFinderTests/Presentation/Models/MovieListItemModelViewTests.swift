@@ -11,7 +11,6 @@ import XCTest
 final class MovieListItemModelViewTests: XCTestCase {
     func test_successful_init_from_entity_and_valid_genres_ids() throws {
         // GIVEN
-        // swiftlint:disable line_length
         let mockListItemEntity = MoviesListItemEntity(
             adult: false,
             backdropPath: nil,
@@ -23,7 +22,7 @@ final class MovieListItemModelViewTests: XCTestCase {
             id: 1071585,
             originalLanguage: "en",
             originalTitle: "M3GAN 2.0",
-            overview: "After the underlying tech for M3GAN is stolen and misused by a powerful defense contractor to create a military-grade weapon known as Amelia, M3GAN's creator Gemma realizes that the only option is to resurrect M3GAN and give her a few upgrades, making her faster, stronger, and more lethal.",
+            overview: "mock overview",
             popularity: 0,
             posterPath: nil,
             releaseDate: "2025-06-25",
@@ -32,7 +31,6 @@ final class MovieListItemModelViewTests: XCTestCase {
             voteAverage: 0,
             voteCount: 0
         )
-        // swiftlint:enable line_length
 
         let mockGenresEntities = [
             GenreEntity(id: 28, name: "Action"),
@@ -62,7 +60,6 @@ final class MovieListItemModelViewTests: XCTestCase {
     
     func test_successful_init_from_entity_and_invalid_genres_ids() throws {
         // GIVEN
-        // swiftlint:disable line_length
         let mockListItemEntity = MoviesListItemEntity(
             adult: false,
             backdropPath: nil,
@@ -74,7 +71,7 @@ final class MovieListItemModelViewTests: XCTestCase {
             id: 1071585,
             originalLanguage: "en",
             originalTitle: "M3GAN 2.0",
-            overview: "After the underlying tech for M3GAN is stolen and misused by a powerful defense contractor to create a military-grade weapon known as Amelia, M3GAN's creator Gemma realizes that the only option is to resurrect M3GAN and give her a few upgrades, making her faster, stronger, and more lethal.",
+            overview: "mock overview",
             popularity: 0,
             posterPath: nil,
             releaseDate: "2025-06-25",
@@ -83,7 +80,6 @@ final class MovieListItemModelViewTests: XCTestCase {
             voteAverage: 0,
             voteCount: 0
         )
-        // swiftlint:enable line_length
 
         let mockGenresEntities = [
             GenreEntity(id: 28, name: "Action"),
@@ -109,7 +105,6 @@ final class MovieListItemModelViewTests: XCTestCase {
     
     func test_successful_init_from_entity_and_empty_genres_ids() throws {
         // GIVEN
-        // swiftlint:disable line_length
         let mockListItemEntity = MoviesListItemEntity(
             adult: false,
             backdropPath: nil,
@@ -117,7 +112,7 @@ final class MovieListItemModelViewTests: XCTestCase {
             id: 1071585,
             originalLanguage: "en",
             originalTitle: "M3GAN 2.0",
-            overview: "After the underlying tech for M3GAN is stolen and misused by a powerful defense contractor to create a military-grade weapon known as Amelia, M3GAN's creator Gemma realizes that the only option is to resurrect M3GAN and give her a few upgrades, making her faster, stronger, and more lethal.",
+            overview: "mock overview",
             popularity: 0,
             posterPath: nil,
             releaseDate: "2025-06-25",
@@ -126,7 +121,6 @@ final class MovieListItemModelViewTests: XCTestCase {
             voteAverage: 0,
             voteCount: 0
         )
-        // swiftlint:enable line_length
 
         let mockGenresEntities = [
             GenreEntity(id: 28, name: "Action"),

@@ -10,9 +10,9 @@ import XCTest
 
 final class MoviesRepositoryTests: XCTestCase {
 
+    // swiftlint:disable function_body_length
     func test_getmovies_returns_success() async throws {
         // GIVEN
-        // swiftlint:disable line_length
         let result = MovieListResponseModel(
             page: 1,
             results: [
@@ -28,7 +28,7 @@ final class MoviesRepositoryTests: XCTestCase {
                     id: 1311031,
                     originalLanguage: "ja",
                     originalTitle: "劇場版「鬼滅の刃」無限城編 第一章 猗窩座再来",
-                    overview: "As the Demon Slayer Corps members and Hashira engaged in a group strength training program, the Hashira Training, in preparation for the forthcoming battle against the demons, Muzan Kibutsuji appears at the Ubuyashiki Mansion. With the head of the Demon Corps in danger, Tanjiro and the Hashira rush to the headquarters but are plunged into a deep descent to a mysterious space by the hands of Muzan Kibutsuji.  The destination of where Tanjiro and Demon Slayer Corps have fallen is the demons' stronghold – the Infinity Castle. And so, the battleground is set as the final battle between the Demon Slayer Corps and the demons ignites.",
+                    overview: "mock overview 1",
                     popularity: 600.6803,
                     posterPath: "/aFRDH3P7TX61FVGpaLhKr6QiOC1.jpg",
                     releaseDate: "2025-07-18",
@@ -44,7 +44,7 @@ final class MoviesRepositoryTests: XCTestCase {
                     id: 1071585,
                     originalLanguage: "en",
                     originalTitle: "M3GAN 2.0",
-                    overview: "After the underlying tech for M3GAN is stolen and misused by a powerful defense contractor to create a military-grade weapon known as Amelia, M3GAN's creator Gemma realizes that the only option is to resurrect M3GAN and give her a few upgrades, making her faster, stronger, and more lethal.",
+                    overview: "mock overview 2",
                     popularity: nil,
                     posterPath: nil,
                     releaseDate: "2025-06-25",
@@ -57,8 +57,7 @@ final class MoviesRepositoryTests: XCTestCase {
             totalPages: 2688,
             totalResults: 53747
         )
-        // swiftlint:enable line_length
-        // swiftlint:disable line_length
+
         let expectedResult = [
             MoviesListItemEntity(
                 adult: false,
@@ -72,7 +71,7 @@ final class MoviesRepositoryTests: XCTestCase {
                 id: 1311031,
                 originalLanguage: "ja",
                 originalTitle: "劇場版「鬼滅の刃」無限城編 第一章 猗窩座再来",
-                overview: "As the Demon Slayer Corps members and Hashira engaged in a group strength training program, the Hashira Training, in preparation for the forthcoming battle against the demons, Muzan Kibutsuji appears at the Ubuyashiki Mansion. With the head of the Demon Corps in danger, Tanjiro and the Hashira rush to the headquarters but are plunged into a deep descent to a mysterious space by the hands of Muzan Kibutsuji.  The destination of where Tanjiro and Demon Slayer Corps have fallen is the demons' stronghold – the Infinity Castle. And so, the battleground is set as the final battle between the Demon Slayer Corps and the demons ignites.",
+                overview: "mock overview 1",
                 popularity: 600.6803,
                 posterPath: "/aFRDH3P7TX61FVGpaLhKr6QiOC1.jpg",
                 releaseDate: "2025-07-18",
@@ -88,7 +87,7 @@ final class MoviesRepositoryTests: XCTestCase {
                 id: 1071585,
                 originalLanguage: "en",
                 originalTitle: "M3GAN 2.0",
-                overview: "After the underlying tech for M3GAN is stolen and misused by a powerful defense contractor to create a military-grade weapon known as Amelia, M3GAN's creator Gemma realizes that the only option is to resurrect M3GAN and give her a few upgrades, making her faster, stronger, and more lethal.",
+                overview: "mock overview 2",
                 popularity: 0,
                 posterPath: nil,
                 releaseDate: "2025-06-25",
@@ -98,7 +97,6 @@ final class MoviesRepositoryTests: XCTestCase {
                 voteCount: 0
             )
         ]
-        // swiftlint:enable line_length
         
         let apiDataSource = ApiDataSourceMoviesStub(
             result: result
@@ -122,6 +120,7 @@ final class MoviesRepositoryTests: XCTestCase {
         XCTAssertNotNil(capturedResult)
         XCTAssertEqual(capturedResult, expectedResult)
     }
+    // swiftlint:enable function_body_length
 
     func test_getgenres_returns_fails() async throws {
         // GIVEN

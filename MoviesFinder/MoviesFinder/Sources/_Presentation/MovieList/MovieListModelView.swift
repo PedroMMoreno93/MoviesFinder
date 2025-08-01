@@ -13,9 +13,10 @@ public struct MovieListModelView: BaseModelView {
     let emtpyStateTitle: String = "No movies to display"
     let emptyStateDescription: String = "Select another genre or change sort category."
     let errorStateTitle: String = "Something went wrong"
-    // swiftlint:disable line_length
-    let errorStateDescription: String = "Couldn't load movies. Please retry.\nIf the problem persist, try rebooting the app."
-    // swiftlint:enable line_length
+    let errorStateDescription: String = """
+Couldn't load movies. Please retry.
+If the problem persists, try rebooting the app.
+"""
     let errorStateRetryButtonLabel: String = "Retry"
     let loadingStateLabel: String = "Loading..."
     let genreDropDownTitle: String = "Genre"
