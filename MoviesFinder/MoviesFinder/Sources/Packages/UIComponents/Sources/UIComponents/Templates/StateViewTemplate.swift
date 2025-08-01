@@ -21,7 +21,7 @@ public struct StateViewTemplate<Icon: View>: View {
         description: String,
         retryButtonLabel: String? = nil,
         retryButtonAction: (() -> Void)? = nil,
-        @ViewBuilder icon: @escaping () -> Icon,
+        @ViewBuilder icon: @escaping () -> Icon
     ) {
         self.title = title
         self.description = description

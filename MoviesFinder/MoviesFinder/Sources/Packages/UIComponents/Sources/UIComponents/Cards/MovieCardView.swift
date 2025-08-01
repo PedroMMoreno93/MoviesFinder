@@ -28,31 +28,36 @@ public struct MovieCardView: View {
     }
     
     public var body: some View {
-        VStack(
-            alignment: .center,
-            spacing: ThemeLayout.Spacing.spacingS
-        ) {
-            image
-
+        Button {
+            self.onTapped()
+        } label: {
             VStack(
-                alignment: .leading,
+                alignment: .center,
                 spacing: ThemeLayout.Spacing.spacingS
             ) {
-                info
-                
-                badges
-                    .frame(
-                        width: ThemeLayout.Frame.gridItemHeight - ThemeLayout.Spacing.spacingM,
-                        height: ThemeLayout.Frame.iconHeightL,
-                        alignment: .top
-                    )
+                image
+
+                VStack(
+                    alignment: .leading,
+                    spacing: ThemeLayout.Spacing.spacingS
+                ) {
+                    info
+                    
+                    badges
+                        .frame(
+                            width: ThemeLayout.Frame.gridItemHeight - ThemeLayout.Spacing.spacingM,
+                            height: ThemeLayout.Frame.iconHeightL,
+                            alignment: .top
+                        )
+                }
+                .padding(.horizontal, ThemeLayout.Spacing.spacingM)
+                .padding(.bottom, ThemeLayout.Spacing.spacingM)
             }
-            .padding(.horizontal, ThemeLayout.Spacing.spacingM)
-            .padding(.bottom, ThemeLayout.Spacing.spacingM)
+            .customCardStyle()
         }
-        .customCardStyle()
-        .onTapGesture {
-            self.onTapped()
+        .buttonStyle(.plain)
+        .background {
+            ThemeColors.background
         }
     }
  
@@ -111,7 +116,7 @@ public struct MovieCardView: View {
                         alignment: .topLeading
                     )
                 ],
-                spacing: ThemeLayout.Spacing.spacingXS,
+                spacing: ThemeLayout.Spacing.spacingXS
             ) {
                 ForEach(model.badges, id: \.self) { badge in
                     Badge(label: badge)

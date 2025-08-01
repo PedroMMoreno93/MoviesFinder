@@ -45,16 +45,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         popover.behavior = .transient
         popover.contentSize = NSSize(width: 300, height: 400)
         popover.contentViewController = NSHostingController(
-            rootView: MovieListFactory.create(
-                createDetail: {
-                    movieId,
-                    backButtonAction in
-                    MovieDetailFactory.create(
-                        movieId: movieId,
-                        backButtonAction: backButtonAction
-                    )
-                }
-            )
+            rootView: MovieListFactory.create()
         )
     }
     

@@ -15,9 +15,6 @@ struct MoviesFinderApp: App {
     var appDelegate
 
     var body: some Scene {
-        WindowGroup {
-            EmptyView()
-        }
         Settings {
             SettingsFactory.create()
         }

@@ -32,45 +32,45 @@ enum MovieDetailFactory: CreateMovieDetailView {
         )
     }
     
-    private static func createMovieDetailsUseCase() -> GetMovieDetailsUseCase {
+    public static func createMovieDetailsUseCase() -> GetMovieDetailsUseCase {
         return GetMovieDetails(
             repository: createMovieDetailsRepository()
         )
     }
     
-    private static func createMovieCreditssUseCase() -> GetMovieCreditsUseCase {
+    public static func createMovieCreditssUseCase() -> GetMovieCreditsUseCase {
         return GetMovieCredits(
             repository: createMovieCreditsRepository()
         )
     }
     
-    private static func createMovieDetailsRepository() -> GetMovieDetailsRepositoryProtocol {
+    public static func createMovieDetailsRepository() -> GetMovieDetailsRepositoryProtocol {
         return MovieDetailsRepository(
             apiDataSourceDetails: createApiDataSourceMovieDetails(),
             detailsDomainMapper: MovieDetailsDomainMapper()
         )
     }
     
-    private static func createMovieCreditsRepository() -> GetMovieCreditsRepositoryProtocol {
+    public static func createMovieCreditsRepository() -> GetMovieCreditsRepositoryProtocol {
         return MovieCreditsRepository(
             apiDataSourceCredits: createApiDataSourceMovieCredits(),
             creditsDomainMapper: MovieCreditsDomainMapper()
         )
     }
     
-    private static func createApiDataSourceMovieDetails() -> ApiDataSourceMovieDetailsProtocol {
+    public static func createApiDataSourceMovieDetails() -> ApiDataSourceMovieDetailsProtocol {
         return ApiDataSourceMovieDetails(
             networkClient: createNetworkClient()
         )
     }
     
-    private static func createApiDataSourceMovieCredits() -> ApiDataSourceMovieCreditsProtocol {
+    public static func createApiDataSourceMovieCredits() -> ApiDataSourceMovieCreditsProtocol {
         return ApiDataSourceMovieCredits(
             networkClient: createNetworkClient()
         )
     }
     
-    private static func createNetworkClient()
+    public static func createNetworkClient()
     -> NetworkManager {
         return NetworkManager()
     }

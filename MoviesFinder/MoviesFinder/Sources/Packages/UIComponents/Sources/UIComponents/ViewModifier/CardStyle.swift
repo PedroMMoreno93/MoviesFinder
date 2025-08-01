@@ -52,12 +52,6 @@ public struct CardStyle: ViewModifier {
                 }
             }
             .scaleEffect(isHovering ? 1.04 : 1)
-            .onLongPressGesture(minimumDuration: 2) {
-            } onPressingChanged: { isLongPressed in
-                withAnimation {
-                    self.isLongPressed = isLongPressed
-                }
-            }
     }
 }
 

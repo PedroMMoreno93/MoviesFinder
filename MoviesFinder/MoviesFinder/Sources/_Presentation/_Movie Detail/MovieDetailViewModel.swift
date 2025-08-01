@@ -28,10 +28,7 @@ public class MovieDetailViewModel: BaseViewModel {
         self.showAlert = showAlert
         self.detailsUseCase = detailsUseCase
         self.creditsUseCase = creditsUseCase
-        self.modelView = MovieDetailModelView()
-        DispatchQueue.main.async { [weak self] in
-            self?.modelView = MovieDetailModelView(movieId: movieId)
-        }
+        self.modelView = MovieDetailModelView(movieId: movieId)
     }
     
     @MainActor
