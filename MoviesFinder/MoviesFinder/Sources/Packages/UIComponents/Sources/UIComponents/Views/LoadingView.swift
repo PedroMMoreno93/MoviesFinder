@@ -16,6 +16,7 @@ public struct LoadingView: View {
     ) {
         self.label = label
     }
+    
     public var body: some View {
         ZStack {
             ThemeColors.shadow.opacity(0.6)

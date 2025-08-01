@@ -14,7 +14,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationDidFinishLaunching(_ notification: Notification) {
         setupStatusBar()
-
+        setupMainWindow()
     }
     
     private func setupMainWindow() {
@@ -44,7 +44,18 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         popover = NSPopover()
         popover.behavior = .transient
         popover.contentSize = NSSize(width: 300, height: 400)
-        popover.contentViewController = NSHostingController(rootView: MovieListFactory.create())
+        popover.contentViewController = NSHostingController(
+            rootView: MovieListFactory.create(
+                createDetail: {
+                    movieId,
+                    backButtonAction in
+                    MovieDetailFactory.create(
+                        movieId: movieId,
+                        backButtonAction: backButtonAction
+                    )
+                }
+            )
+        )
     }
     
     @objc func statusBarButtonClicked(_ sender: NSStatusBarButton) {
