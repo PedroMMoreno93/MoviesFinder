@@ -18,6 +18,12 @@ public enum DataConstants {
     public enum Endpoints {
         public static let movies: String = "discover/movie"
         public static let genres: String = "genre/movie/list"
+        public static func movieDetails(_ movieId: Int) -> String {
+           return "movie/\(movieId)"
+        }
+        public static func movieCredits(_ movieId: Int) -> String {
+            return "movie/\(movieId)/credits"
+        }
     }
    
     // swiftlint:disable line_length

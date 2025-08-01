@@ -1,5 +1,5 @@
 //
-//  MoviewCardView.swift
+//  MovieCardView.swift
 //  MoviesFinder
 //
 //  Created by Pedro M Moreno on 30/7/25.
@@ -8,19 +8,19 @@
 import SwiftUI
 import Theme
 
-public protocol MoviewCardModelView: Identifiable, Equatable {
+public protocol MovieCardModelView: Identifiable, Equatable {
     var title: String { get }
     var description: String { get }
     var badges: [String] { get }
     var thumbnailUrl: String? { get }
 }
 
-public struct MoviewCardView: View {
-    private let model: any MoviewCardModelView
+public struct MovieCardView: View {
+    private let model: any MovieCardModelView
     private var onTapped: () -> Void
 
     public init(
-        model: any MoviewCardModelView,
+        model: any MovieCardModelView,
         onTapped: @escaping () -> Void
     ) {
         self.model = model

@@ -11,14 +11,35 @@ import UIComponents
 
 public struct MovieListView: BaseView {
     @StateObject public var viewModel: MovieListViewModel
-    
+    @State private var selectedDetail: MovieDetailView?
+    private let createMovieDetailView: (
+        Int, (() -> Void)?
+    ) -> MovieDetailView
+
     public init(
-        viewModel: MovieListViewModel
+        viewModel: MovieListViewModel,
+        createMovieDetailView: @escaping (
+          Int, (() -> Void)?
+       ) -> MovieDetailView
     ) {
         self._viewModel = StateObject(wrappedValue: viewModel)
+        self.createMovieDetailView = createMovieDetailView
     }
     
     public var body: some View {
+        HStack(spacing: 0) {
+            groupedBody
+            if let selectedMovieId = viewModel.modelView.selectedMovieId {
+                createMovieDetailView(selectedMovieId) {
+                    withAnimation {
+                        viewModel.modelView.selectedMovieId = nil
+                    }
+                }
+            }
+        }
+    }
+    
+    public var groupedBody: some View {
         Group {
             if viewModel.modelView.movies.isEmpty && viewModel.state == .success {
                 emptyStateView
@@ -147,7 +168,7 @@ public struct MovieListView: BaseView {
         .clipped()
     }
     
-    private var moviewsColumns: [GridItem] {
+    private var moviesColumns: [GridItem] {
         return [
             GridItem(
                 .adaptive(minimum: ThemeLayout.Frame.gridItemHeight),
@@ -159,12 +180,26 @@ public struct MovieListView: BaseView {
     private var movieList: some View {
         ScrollView {
             LazyVGrid(
-                columns: moviewsColumns,
+                columns: moviesColumns,
                 spacing: ThemeLayout.Spacing.spacingGrid
             ) {
                 ForEach(viewModel.modelView.movies, id: \.id) { movie in
-                    MoviewCardView(model: movie) {
-                        // TODO: navegacion detalle
+                    MovieCardView(model: movie) {
+                        if viewModel.modelView.selectedMovieId == nil {
+                            withAnimation(.easeOut(duration: 0.2)) {
+                                viewModel.modelView.selectedMovieId = movie.movieId
+                            }
+                        } else if let selectedMovieId = viewModel.modelView.selectedMovieId,
+                                  selectedMovieId != movie.movieId {
+                            withAnimation(.easeOut(duration: 0.2)) {
+                                viewModel.modelView.selectedMovieId = nil
+                            }
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                                withAnimation(.easeOut(duration: 0.2)) {
+                                    viewModel.modelView.selectedMovieId = movie.movieId
+                                }
+                            }
+                        }
                     }
                     .redacted(reason: viewModel.state == .loading ? .placeholder : .init())
                     

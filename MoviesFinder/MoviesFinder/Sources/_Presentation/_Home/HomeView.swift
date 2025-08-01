@@ -12,7 +12,7 @@ import Theme
 
 struct HomeView: BaseView {
     @StateObject public var viewModel: HomeViewModel
-    @State private var selection: SidebarItem? = .movies
+    @State private var selection: SidebarItem?
     
     let moviesList: MovieListView
     
@@ -31,7 +31,17 @@ struct HomeView: BaseView {
                 selection: $selection
             ) { item in
                 NavigationLink(destination: destination(for: item)) {
-                    Text(item.rawValue)
+                    Label {
+                        Text(item.title)
+                            .font(ThemeFonts.body)
+                            .foregroundStyle(ThemeColors.primaryText)
+                    } icon: {
+                        item.icon
+                            .resizable()
+                            .scaledToFit()
+                            .frame(height: ThemeLayout.Frame.iconStatus.height, alignment: .center)
+                            .foregroundStyle(ThemeColors.primaryText)
+                    }
                 }
             }
             .listStyle(SidebarListStyle())
@@ -65,11 +75,11 @@ struct HomeView: BaseView {
         switch item {
         case .movies:
             self.moviesList
-                .navigationTitle(item.navigationTitle)
+                .navigationTitle(item.title)
             
         case .settings:
             temporarySettingsView
-                .navigationTitle(item.navigationTitle)
+                .navigationTitle(item.title)
         }
     }
     

@@ -121,6 +121,9 @@ public enum ThemeLayout {
         /// Section banner or header image. Value of 180 pt.
         public static let backdropHeight: CGFloat = 180
         
+        /// Section banner or header image. Value of 448 pt.
+        public static let detailBackdropHeight: CGFloat = 448
+        
         /// Defaul card size. Value of 180 x 20.
         public static let cardSize = CGSize(width: 180, height: 280)
         
