@@ -11,6 +11,9 @@ import UIComponents
 import Theme
 
 struct HomeView: BaseView {
+    @AppStorage("appearance")
+    private var selectedAppearance: Appearance = .system
+    
     @StateObject public var viewModel: HomeViewModel
     @State private var selection: SidebarItem?
     
@@ -60,6 +63,7 @@ struct HomeView: BaseView {
             welcomeScreen
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .preferredColorScheme(selectedAppearance.colorScheme)
     }
     
     private var welcomeScreen: some View {

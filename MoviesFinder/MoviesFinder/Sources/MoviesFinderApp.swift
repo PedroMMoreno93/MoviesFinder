@@ -11,14 +11,15 @@ import UIUtils
 
 @main
 struct MoviesFinderApp: App {
-    @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    @NSApplicationDelegateAdaptor(AppDelegate.self)
+    var appDelegate
 
     var body: some Scene {
         WindowGroup {
             EmptyView()
         }
         Settings {
-            Text("Settings")
+            SettingsFactory.create()
         }
     }
 }

@@ -9,10 +9,13 @@ import Foundation
 import LaunchAtLogin
 import MVVM_Core
 import SwiftUI
+import Theme
 
 public struct SettingsView: BaseView {
+    @AppStorage("appearance")
+    private var selectedAppearance: Appearance = .system
     @StateObject public var viewModel: SettingsViewModel
-
+    
     public init(
         viewModel: SettingsViewModel
     ) {
@@ -21,11 +24,30 @@ public struct SettingsView: BaseView {
     
     
     public var body: some View {
-        VStack {
-            LaunchAtLogin.Toggle()
-
+        VStack(
+            alignment: .leading,
+            spacing: ThemeLayout.Spacing.spacingXL
+        ) {
+            launchAtLogin
+            appearance
         }
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .padding()
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+    }
+    
+    private var launchAtLogin: some View {
+        LaunchAtLogin.Toggle()
+        
+    }
+    
+    private var appearance: some View {
+        Picker(viewModel.modelView.appearanceSelectorLabel, selection: $selectedAppearance) {
+            ForEach(Appearance.allCases) { mode in
+                Text(mode.rawValue).tag(mode)
+            }
+        }
+        .pickerStyle(SegmentedPickerStyle())
+        .frame(size: ThemeLayout.Frame.pickeraSizeL)
     }
 }
 
