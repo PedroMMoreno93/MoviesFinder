@@ -12,33 +12,30 @@ import UIComponents
 public struct MovieListView: BaseView {
     @StateObject public var viewModel: MovieListViewModel
     @State private var selectedDetail: MovieDetailView?
-    private let createMovieDetailView: (
-        Int, (() -> Void)?
-    ) -> MovieDetailView
-
+    
     public init(
-        viewModel: MovieListViewModel,
-        createMovieDetailView: @escaping (
-          Int, (() -> Void)?
-       ) -> MovieDetailView
+        viewModel: MovieListViewModel
     ) {
         self._viewModel = StateObject(wrappedValue: viewModel)
-        self.createMovieDetailView = createMovieDetailView
     }
     
     public var body: some View {
-        groupedBody
-            .overlay {
-                if let selectedMovieId = viewModel.modelView.selectedMovieId {
-                    createMovieDetailView(selectedMovieId) {
+        ZStack {
+            groupedBody
+            if let selectedMovieId = viewModel.modelView.selectedMovieId {
+                    MovieDetailFactory.create(
+                        movieId: selectedMovieId
+                    ) {
                         withAnimation {
                             viewModel.modelView.selectedMovieId = nil
                         }
                     }
                     .transition(.move(edge: .trailing))
-                }
             }
-
+        }
+        .background {
+            ThemeColors.background
+        }
     }
     
     public var groupedBody: some View {

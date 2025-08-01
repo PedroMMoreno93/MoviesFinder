@@ -10,13 +10,14 @@ import NetworkSystem
 
 enum MovieListFactory {
     static func create(
-        createDetail: @escaping (Int, (() -> Void)?) -> MovieDetailView
+//        createDetail: @escaping (Int, (() -> Void)?) -> MovieDetailView
     ) -> MovieListView {
         return MovieListView(
             viewModel: createViewModel()
-        ) { movieId, backuButton in
-            MovieDetailFactory.create(movieId: movieId, backButtonAction: backuButton)
-        }
+        )
+//        { movieId, backuButton in
+//            MovieDetailFactory.create(movieId: movieId, backButtonAction: backuButton)
+//        }
     }
     
     private static func createViewModel() -> MovieListViewModel {
