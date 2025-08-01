@@ -45,6 +45,9 @@ public struct MovieDetailView: BaseView {
                 LoadingView(label: viewModel.modelView.loadingStateLabel)
             }
         }
+        .background {
+            ThemeColors.background
+        }
         .alert(
             viewModel.modelView.errorAlertTitle,
             isPresented: $viewModel.showAlert
@@ -209,13 +212,24 @@ public struct MovieDetailView: BaseView {
                     .blur(radius: 1)
                     
             } placeholder: {
-                Spinner()
-                    .frame(maxWidth: .infinity)
+                ZStack {
+                    ThemeColors.background
+                        .frame(maxWidth: .infinity)
+                        .frame(height: ThemeLayout.Frame.detailBackdropHeight)
+                    
+                    Spinner()
+                        .frame(height: ThemeLayout.Frame.iconHeightXL)
+                }
+                .frame(maxWidth: .infinity)
+                .frame(height: ThemeLayout.Frame.detailBackdropHeight)
+                .opacity(0.4)
             }
         } else {
             ZStack {
                 ThemeColors.background
                     .frame(maxWidth: .infinity)
+                    .frame(height: ThemeLayout.Frame.detailBackdropHeight)
+
                 ThemeImages.placeholder
                     .resizable()
                     .scaledToFit()

@@ -11,21 +11,14 @@ import UIUtils
 
 @main
 struct MoviesFinderApp: App {
+    @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+
     var body: some Scene {
         WindowGroup {
-            HomeView(
-                moviesList: MovieListFactory.create(
-                    createDetail: {
-                        movieId,
-                        backButtonAction in
-                        MovieDetailFactory.create(
-                            movieId: movieId,
-                            backButtonAction: backButtonAction
-                        )
-                    }
-                )
-            )
-            .maximizeView()
+            EmptyView()
+        }
+        Settings {
+            Text("Settings")
         }
     }
 }

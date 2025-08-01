@@ -27,16 +27,18 @@ public struct MovieListView: BaseView {
     }
     
     public var body: some View {
-        HStack(spacing: 0) {
-            groupedBody
-            if let selectedMovieId = viewModel.modelView.selectedMovieId {
-                createMovieDetailView(selectedMovieId) {
-                    withAnimation {
-                        viewModel.modelView.selectedMovieId = nil
+        groupedBody
+            .overlay {
+                if let selectedMovieId = viewModel.modelView.selectedMovieId {
+                    createMovieDetailView(selectedMovieId) {
+                        withAnimation {
+                            viewModel.modelView.selectedMovieId = nil
+                        }
                     }
+                    .transition(.move(edge: .trailing))
                 }
             }
-        }
+
     }
     
     public var groupedBody: some View {
