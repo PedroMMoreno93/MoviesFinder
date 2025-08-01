@@ -7,16 +7,16 @@
 
 import SwiftUI
 import NetworkSystem
+import UIUtils
 
 @main
 struct MoviesFinderApp: App {
     var body: some Scene {
         WindowGroup {
-            MovieListFactory.create()
-            .frame(
-                maxWidth: NSScreen.main?.frame.width ?? 800,
-                maxHeight: NSScreen.main?.frame.height ?? 600
+            HomeView(
+                moviesList: MovieListFactory.create()
             )
+            .maximizeView()
         }
     }
 }

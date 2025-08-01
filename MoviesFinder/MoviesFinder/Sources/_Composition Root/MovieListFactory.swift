@@ -8,7 +8,7 @@
 import Foundation
 import NetworkSystem
 
-class MovieListFactory {
+enum MovieListFactory {
     static func create() -> MovieListView {
         return MovieListView(
             viewModel: createViewModel()
