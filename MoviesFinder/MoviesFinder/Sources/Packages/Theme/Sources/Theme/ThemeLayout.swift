@@ -130,6 +130,9 @@ public enum ThemeLayout {
         /// Picker style size. Value of 200 x 40.
         public static let pickerSize = CGSize(width: 200, height: 40)
         
+        /// Picker large style size. Value of 600 x 40.
+        public static let pickeraSizeL = CGSize(width: 600, height: 40)
+        
         /// Small badges. Value of 24 pt.
         public static let badgeHeight: CGFloat = 24
 

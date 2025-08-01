@@ -13,6 +13,7 @@
 		22461BA72E3A85E400FBA0AE /* MVVM_Core in Frameworks */ = {isa = PBXBuildFile; productRef = 22461BA62E3A85E400FBA0AE /* MVVM_Core */; };
 		22461BEC2E3A964700FBA0AE /* NetworkSystem in Frameworks */ = {isa = PBXBuildFile; productRef = 22461BEB2E3A964700FBA0AE /* NetworkSystem */; };
 		22461D1C2E3BCD5C00FBA0AE /* UIUtils in Frameworks */ = {isa = PBXBuildFile; productRef = 22461D1B2E3BCD5C00FBA0AE /* UIUtils */; };
+		226957402E3D182900588819 /* LaunchAtLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 2269573F2E3D182900588819 /* LaunchAtLogin */; };
 		22E378B82E3A638B002FA7E4 /* TestPlan.xctestplan in Resources */ = {isa = PBXBuildFile; fileRef = 22E378B72E3A638B002FA7E4 /* TestPlan.xctestplan */; };
 /* End PBXBuildFile section */
 
@@ -70,6 +71,7 @@
 			files = (
 				22461D1C2E3BCD5C00FBA0AE /* UIUtils in Frameworks */,
 				22461B6C2E3A851900FBA0AE /* Utils in Frameworks */,
+				226957402E3D182900588819 /* LaunchAtLogin in Frameworks */,
 				22461B412E3A838B00FBA0AE /* UIComponents in Frameworks */,
 				22461BEC2E3A964700FBA0AE /* NetworkSystem in Frameworks */,
 				22461B022E3A756100FBA0AE /* Theme in Frameworks */,
@@ -125,6 +127,7 @@
 				22E378892E3A627B002FA7E4 /* Frameworks */,
 				22E3788A2E3A627B002FA7E4 /* Resources */,
 				22E378B92E3A64EA002FA7E4 /* Swiftlint */,
+				226957422E3D184D00588819 /* Launch at Login */,
 			);
 			buildRules = (
 			);
@@ -141,6 +144,7 @@
 				22461BA62E3A85E400FBA0AE /* MVVM_Core */,
 				22461BEB2E3A964700FBA0AE /* NetworkSystem */,
 				22461D1B2E3BCD5C00FBA0AE /* UIUtils */,
+				2269573F2E3D182900588819 /* LaunchAtLogin */,
 			);
 			productName = MoviesFinder;
 			productReference = 22E3788C2E3A627B002FA7E4 /* MoviesFinder.app */;
@@ -197,6 +201,9 @@
 			);
 			mainGroup = 22E378832E3A627B002FA7E4;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				2269573E2E3D182900588819 /* XCRemoteSwiftPackageReference "LaunchAtLogin-Legacy" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 22E3788D2E3A627B002FA7E4 /* Products */;
 			projectDirPath = "";
@@ -227,6 +234,25 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		226957422E3D184D00588819 /* Launch at Login */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Launch at Login";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${BUILT_PRODUCTS_DIR}/LaunchAtLogin_LaunchAtLogin.bundle/Contents/Resources/copy-helper-swiftpm.sh\"\n";
+		};
 		22E378B92E3A64EA002FA7E4 /* Swiftlint */ = {
 			isa = PBXShellScriptBuildPhase;
 			alwaysOutOfDate = 1;
@@ -534,6 +560,17 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCRemoteSwiftPackageReference section */
+		2269573E2E3D182900588819 /* XCRemoteSwiftPackageReference "LaunchAtLogin-Legacy" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sindresorhus/LaunchAtLogin-Legacy";
+			requirement = {
+				kind = exactVersion;
+				version = 5.0.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
 		22461B012E3A756100FBA0AE /* Theme */ = {
 			isa = XCSwiftPackageProductDependency;
@@ -558,6 +595,11 @@
 		22461D1B2E3BCD5C00FBA0AE /* UIUtils */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = UIUtils;
+		};
+		2269573F2E3D182900588819 /* LaunchAtLogin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2269573E2E3D182900588819 /* XCRemoteSwiftPackageReference "LaunchAtLogin-Legacy" */;
+			productName = LaunchAtLogin;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
