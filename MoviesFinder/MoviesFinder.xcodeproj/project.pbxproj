@@ -12,6 +12,7 @@
 		22461B6C2E3A851900FBA0AE /* Utils in Frameworks */ = {isa = PBXBuildFile; productRef = 22461B6B2E3A851900FBA0AE /* Utils */; };
 		22461BA72E3A85E400FBA0AE /* MVVM_Core in Frameworks */ = {isa = PBXBuildFile; productRef = 22461BA62E3A85E400FBA0AE /* MVVM_Core */; };
 		22461BEC2E3A964700FBA0AE /* NetworkSystem in Frameworks */ = {isa = PBXBuildFile; productRef = 22461BEB2E3A964700FBA0AE /* NetworkSystem */; };
+		22461D1C2E3BCD5C00FBA0AE /* UIUtils in Frameworks */ = {isa = PBXBuildFile; productRef = 22461D1B2E3BCD5C00FBA0AE /* UIUtils */; };
 		22E378B82E3A638B002FA7E4 /* TestPlan.xctestplan in Resources */ = {isa = PBXBuildFile; fileRef = 22E378B72E3A638B002FA7E4 /* TestPlan.xctestplan */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +36,7 @@
 		22E379462E3A7127002FA7E4 /* Exceptions for "MoviesFinder" folder in "MoviesFinder" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
+				Info.plist,
 				Sources/Packages/MVVM_Core,
 				Sources/Packages/NetworkSystem,
 				Sources/Packages/Theme,
@@ -66,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22461D1C2E3BCD5C00FBA0AE /* UIUtils in Frameworks */,
 				22461B6C2E3A851900FBA0AE /* Utils in Frameworks */,
 				22461B412E3A838B00FBA0AE /* UIComponents in Frameworks */,
 				22461BEC2E3A964700FBA0AE /* NetworkSystem in Frameworks */,
@@ -137,6 +140,7 @@
 				22461B6B2E3A851900FBA0AE /* Utils */,
 				22461BA62E3A85E400FBA0AE /* MVVM_Core */,
 				22461BEB2E3A964700FBA0AE /* NetworkSystem */,
+				22461D1B2E3BCD5C00FBA0AE /* UIUtils */,
 			);
 			productName = MoviesFinder;
 			productReference = 22E3788C2E3A627B002FA7E4 /* MoviesFinder.app */;
@@ -406,6 +410,7 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MoviesFinder/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = MoviesFinder;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
@@ -430,7 +435,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = MoviesFinder/MoviesFinder.entitlements;
+				CODE_SIGN_ENTITLEMENTS = MoviesFinder/MoviesFinderRelease.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Developer ID Application";
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -441,6 +446,7 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MoviesFinder/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = MoviesFinder;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
@@ -548,6 +554,10 @@
 		22461BEB2E3A964700FBA0AE /* NetworkSystem */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = NetworkSystem;
+		};
+		22461D1B2E3BCD5C00FBA0AE /* UIUtils */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = UIUtils;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

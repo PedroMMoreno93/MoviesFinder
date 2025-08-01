@@ -9,8 +9,7 @@ import CryptoKit
 import Foundation
 import Utils
 
-final class NetworkManager {
-    
+open class NetworkManager {
     var urlProtocol: URLProtocol.Type?
     private var request: NetworkRequestProtocol?
     private var cacheDuration: TimeInterval // En segundos
@@ -22,7 +21,6 @@ final class NetworkManager {
             configuration.protocolClasses = [urlProtocol]
             return URLSession(configuration: configuration)
         } else {
-            
             let configuration = URLSessionConfiguration.default
             configuration.timeoutIntervalForRequest = timeout
             configuration.urlCache = URLCache.shared
@@ -56,7 +54,7 @@ final class NetworkManager {
         self.cacheDuration = cacheDuration
     }
     
-    public func sendRequest(
+    open func sendRequest(
         networkRequest: NetworkRequestProtocol
     ) async throws -> Data {
         self.request = networkRequest
@@ -65,10 +63,10 @@ final class NetworkManager {
         return data
     }
     
-    public func sendRequest<ResponseType: Decodable>(
+    open func sendRequest<ResponseType>(
         networkRequest: NetworkRequestProtocol,
         responseModel: ResponseType.Type
-    ) async throws -> ResponseType {
+    ) async throws -> ResponseType where ResponseType: Decodable {
         self.request = networkRequest
         self.log(category: .request, message: networkRequest.toString())
         let data = try await handleRequest(request: networkRequest.build())
@@ -86,7 +84,6 @@ final class NetworkManager {
     func handleRequest(
         request: URLRequest
     ) async throws -> Data {
-        
         if await NetworkMonitor.shared.isConnected {
             return try await self.handleConnectedRequest(request)
         } else {

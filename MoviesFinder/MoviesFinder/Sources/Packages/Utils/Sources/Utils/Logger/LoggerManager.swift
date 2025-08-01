@@ -17,7 +17,8 @@ public enum LoggerManager {
         LoggerManager.getLog(
             category: category,
             subsystem: subsystem
-        ).debug(
+        )
+        .debug(
             "\(message)"
         )
     }
@@ -30,7 +31,8 @@ public enum LoggerManager {
         LoggerManager.getLog(
             category: category,
             subsystem: subsystem
-        ).debug(
+        )
+        .debug(
             "\(message)"
         )
     }

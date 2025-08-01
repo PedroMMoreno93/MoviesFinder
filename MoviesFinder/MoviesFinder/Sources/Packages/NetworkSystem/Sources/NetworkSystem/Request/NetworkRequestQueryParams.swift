@@ -17,4 +17,8 @@ public struct NetworkRequestQueryParams {
         self.key = key
         self.value = value
     }
+    
+    var stringRepresentation: String {
+        return key + ": " + "\(value)"
+    }
 }
