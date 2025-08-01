@@ -15,13 +15,16 @@ struct HomeView: BaseView {
     @State private var selection: SidebarItem?
     
     let moviesList: MovieListView
-    
+    let settings: SettingsView
+
     public init(
         viewModel: HomeViewModel = HomeViewModel(),
-        moviesList: MovieListView
+        moviesList: MovieListView,
+        settings: SettingsView
     ) {
         self._viewModel = StateObject(wrappedValue: viewModel)
         self.moviesList = moviesList
+        self.settings = settings
     }
     
     var body: some View {
@@ -78,17 +81,10 @@ struct HomeView: BaseView {
                 .navigationTitle(item.title)
             
         case .settings:
-            temporarySettingsView
+            self.settings
                 .navigationTitle(item.title)
         }
     }
-    
-    
-    private var temporarySettingsView: some View {
-        Text("To be implemented...")
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-    }
-    
     
     private func toggleSidebar() {
         NSApp.keyWindow?.firstResponder?.tryToPerform(#selector(NSSplitViewController.toggleSidebar(_:)), with: nil)

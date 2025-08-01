@@ -20,7 +20,8 @@ class MainWindowController: NSWindowController {
                         backButtonAction: backButtonAction
                     )
                 }
-            )
+            ),
+            settings: SettingsFactory.create()
         )
         .maximizeView()
         
