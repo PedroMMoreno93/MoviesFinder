@@ -11,7 +11,6 @@ import UIUtils
 
 public struct CardStyle: ViewModifier {
     @State private var isHovering: Bool = false
-    @State private var isLongPressed: Bool = false
 
     private let cardSize: CGSize
     private let backgroundColor: Color
@@ -34,11 +33,6 @@ public struct CardStyle: ViewModifier {
             )
             .background {
                 ThemeColors.surface
-            }
-            .overlay {
-                if isLongPressed {
-                    ThemeColors.primaryAccent.opacity(0.1)
-                }
             }
             .roundCorners(
                 cornerRadius: ThemeLayout.Spacing.spacingS
