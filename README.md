@@ -37,7 +37,7 @@ A native macOS (12+) application to browse, group and sort movie data from the [
   - A first-launch welcome window with brief instructions  
 
 - **Settings Window**  
-  - Switch between light/dark/custom themes  
+  - Switch between light/dark/system themes  
   - Toggle “Launch at Login” behavior  
 
 - **Universal Binary**  
