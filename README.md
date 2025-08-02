@@ -1,20 +1,22 @@
-# MoviesFinder
+<img src="docs/assets/MoviesFinder-icon.png" alt="MoviesFinder Icon" width="128" />
 
+# MoviesFinder
 A native macOS (12+) application to browse, group and sort movie data from the [TMDB API](https://developer.themoviedb.org/docs/getting-started).
 
 ---
 
 ## 🚀 Table of Contents
 
-1. [Features](#features)  
-2. [Architecture](#architecture)  
+1. [Features](#features)
+2. [Screenshots](#screenshots)
+3. [Architecture](#architecture)  
    - [Clean Architecture](#clean-architecture)  
    - [MVVM (Presentation Layer)](#mvvm-presentation-layer)  
-3. [Modularization (Swift Packages)](#modularization-swift-packages)  
-4. [Layer Structure](#layer-structure)  
-5. [Testing](#testing)  
-6. [Build & Packaging](#build--packaging)  
-7. [3rd-Party Libraries](#external--libraries)  
+4. [Modularization (Swift Packages)](#modularization-swift-packages)  
+5. [Layer Structure](#layer-structure)  
+6. [Testing](#testing)  
+7. [Build & Packaging](#build--packaging)  
+8. [3rd-Party Libraries](#external--libraries)  
 
 ---
 <a name="features"></a>
@@ -39,6 +41,16 @@ A native macOS (12+) application to browse, group and sort movie data from the [
 
 - **Universal Binary**  
   - Runs natively on both Intel (x86_64) and Apple Silicon (arm64)  
+---
+<a name="screenshots"></a>
+## 📸 Screenshots
+<div align="center">
+
+<img src="docs/assets/screenshot-list.png" alt="Movie list view" width="300"/>
+<img src="docs/assets/screenshot-detail.png" alt="Movie detail overlay" width="300"/>
+<img src="docs/assets/screenshot-status-bar.png" alt="Status bar movie list view" width="300"/>
+
+</div>
 
 ---
 <a name="architecture"></a>
