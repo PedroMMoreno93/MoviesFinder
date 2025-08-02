@@ -9,14 +9,15 @@ A native macOS (12+) application to browse, group and sort movie data from the [
 
 1. [Features](#features)
 2. [Screenshots](#screenshots)
-3. [Architecture](#architecture)  
+3. [Installation](#installation)
+4. [Architecture](#architecture)  
    - [Clean Architecture](#clean-architecture)  
    - [MVVM (Presentation Layer)](#mvvm-presentation-layer)  
-4. [Modularization (Swift Packages)](#modularization-swift-packages)  
-5. [Layer Structure](#layer-structure)  
-6. [Testing](#testing)  
-7. [Build & Packaging](#build--packaging)  
-8. [3rd-Party Libraries](#external--libraries)  
+5. [Modularization (Swift Packages)](#modularization-swift-packages)  
+6. [Layer Structure](#layer-structure)  
+7. [Testing](#testing)  
+8. [Build & Packaging](#build--packaging)  
+9. [3rd-Party Libraries](#external--libraries)  
 
 ---
 <a name="features"></a>
@@ -53,6 +54,26 @@ A native macOS (12+) application to browse, group and sort movie data from the [
 </div>
 
 ---
+
+<a name="installation"></a>
+## 📥 Installation
+1. **Run the installer**  
+   Double-click `MoviesFinder-signed.pkg`.  
+2. **Handle the Gatekeeper alert**  
+   — “MoviesFinder-signed.pkg cannot be opened because Apple cannot check it for malicious software.”  
+   Click **OK**.  
+3. **Open Security settings**  
+   - **macOS 13+**: System Settings → Privacy & Security  
+   - **macOS 12**: System Preferences → Security & Privacy → General  
+4. **Allow the blocked installer**  
+   Click **Open Anyway** under the “blocked” message.  
+5. **Confirm and install**  
+   Click **Open** when the alert reappears, then follow prompts.  
+6. **Launch MoviesFinder**  
+   Find it in `/Applications` and open.
+
+---
+
 <a name="architecture"></a>
 ## 🏗 Architecture
 
@@ -181,6 +202,7 @@ chmod +x scripts/*.sh
 # Generate signed installer:
 bash scripts/main.sh
 ```
+---
 
 <a name="external--libraries"></a>
 ## 📚 3rd-Party Libraries
