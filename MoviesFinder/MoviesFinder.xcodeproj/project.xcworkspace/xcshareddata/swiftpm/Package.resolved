@@ -1,0 +1,15 @@
+{
+  "originHash" : "1682f63da07a38d312af5c49f5dc25ebcb722d9a1bbf7b8611965269dea3f073",
+  "pins" : [
+    {
+      "identity" : "launchatlogin-legacy",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/sindresorhus/LaunchAtLogin-Legacy",
+      "state" : {
+        "revision" : "9a894d799269cb591037f9f9cb0961510d4dca81",
+        "version" : "5.0.2"
+      }
+    }
+  ],
+  "version" : 3
+}

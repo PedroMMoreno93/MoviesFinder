@@ -1,0 +1,96 @@
+//
+//  HomeView.swift
+//  MoviesFinder
+//
+//  Created by Pedro M Moreno on 1/8/25.
+//
+
+import MVVM_Core
+import SwiftUI
+import UIComponents
+import Theme
+
+struct HomeView: BaseView {
+    @AppStorage("appearance")
+    private var selectedAppearance: Appearance = .system
+    
+    @StateObject public var viewModel: HomeViewModel
+    @State private var selection: SidebarItem?
+    
+    let moviesList: MovieListView
+    let settings: SettingsView
+
+    public init(
+        viewModel: HomeViewModel = HomeViewModel(),
+        moviesList: MovieListView,
+        settings: SettingsView
+    ) {
+        self._viewModel = StateObject(wrappedValue: viewModel)
+        self.moviesList = moviesList
+        self.settings = settings
+    }
+    
+    var body: some View {
+        NavigationView {
+            List(
+                SidebarItem.allCases,
+                selection: $selection
+            ) { item in
+                NavigationLink(destination: destination(for: item)) {
+                    Label {
+                        Text(item.title)
+                            .font(ThemeFonts.body)
+                            .foregroundStyle(ThemeColors.primaryText)
+                    } icon: {
+                        item.icon
+                            .resizable()
+                            .scaledToFit()
+                            .frame(height: ThemeLayout.Frame.iconStatus.height, alignment: .center)
+                            .foregroundStyle(ThemeColors.primaryText)
+                    }
+                }
+            }
+            .listStyle(SidebarListStyle())
+            .frame(minWidth: ThemeLayout.Frame.sideBarWidth)
+            .toolbar {
+                ToolbarItem(placement: .automatic) {
+                    Button(action: toggleSidebar) {
+                        ThemeImages.sidebarIcon
+                    }
+                }
+            }
+            
+            welcomeScreen
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .preferredColorScheme(selectedAppearance.colorScheme)
+    }
+    
+    private var welcomeScreen: some View {
+        StateViewTemplate(
+            title: viewModel.modelView.welcomeScreenTitle,
+            description: viewModel.modelView.welcomeStringDescription
+        ) {
+            ThemeImages.placeholder
+                .resizable()
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+    }
+    
+    @ViewBuilder
+    private func destination(for item: SidebarItem) -> some View {
+        switch item {
+        case .movies:
+            self.moviesList
+                .navigationTitle(item.title)
+            
+        case .settings:
+            self.settings
+                .navigationTitle(item.title)
+        }
+    }
+    
+    private func toggleSidebar() {
+        NSApp.keyWindow?.firstResponder?.tryToPerform(#selector(NSSplitViewController.toggleSidebar(_:)), with: nil)
+    }
+}
